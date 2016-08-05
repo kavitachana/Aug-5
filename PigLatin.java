@@ -45,15 +45,24 @@ public class PigLatin {
 					if (letter == 0) {
 						convertedWords[word] = currentWordSB + "yay";
 					} 
-					
 					else {
 						String currentWordSnippet = currentWordSB.substring(0, letter);
 						currentWordSB.delete(0, letter);
 						convertedWords[word] = currentWordSB.toString() + currentWordSnippet + "ay";
 					}
-					
 					break;
-
+				case 'y':
+					if (letter != 0) {
+						String currentWordSnippet = currentWordSB.substring(0, letter);
+						currentWordSB.delete(0, letter);
+						convertedWords[word] = currentWordSB.toString() + currentWordSnippet + "ay";
+					}
+					else {
+	
+					continue;
+					}
+					break;
+				
 				default:
 					if (letter == (numberChars - 1)) {
 						convertedWords[word] = currentWordSB.toString();
